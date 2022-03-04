@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
+  <head>
+    <meta charset="UTF-8" />
     <title>DAM</title>
-</head>
-<body>
-<div th:replace="fragments/header :: header"></div>
-<h2>Student List</h2> 
+  </head>
+  <body>
+    <div th:replace="fragments/header :: header"></div>
+    <h2>Student List</h2>
 
-<table>
-    <tr>
+    <table>
+      <tr>
         <th>Id</th>
         <th>FirstName</th>
         <th>LastName</th>
@@ -19,9 +19,10 @@
         <th>city</th>
         <th>zipCode</th>
         <th>Phone</th>
-    </tr>
-    <tr th:each="student : ${students}">
-    	<td th:text="${student.id}"></td>
+        <!--<th>University_ID</th>-->
+      </tr>
+      <tr th:each="student : ${students}">
+        <td th:text="${student.id}"></td>
         <td th:text="${student.firstName}"></td>
         <td th:text="${student.lastName}"></td>
         <td th:text="${student.email}"></td>
@@ -30,9 +31,10 @@
         <td th:text="${student.address.city}"></td>
         <td th:text="${student.address.zipCode}"></td>
         <td th:text="${student.phones[0]}"></td>
-    </tr>    
-</table>
-<br/>  
-<div th:replace="fragments/footer :: footer"></div>
-</body>
+        <!--  <td th:text="${student.university_id}"></td>-->
+      </tr>
+    </table>
+    <br />
+    <div th:replace="fragments/footer :: footer"></div>
+  </body>
 </html>

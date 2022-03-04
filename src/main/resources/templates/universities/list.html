@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>DAM</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<h2>Universities List</h2> 
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>name</th>
+        <th>addressLine1</th>
+        <th>addressLine2</th>
+        <th>city</th>
+        <th>zipCode</th>
+    </tr>
+    <tr th:each="university : ${universities}">
+    	<td th:text="${university.id}"></td>
+        <td th:text="${university.name}"></td>
+        <td th:text="${university.address.addressLine1}"></td>
+        <td th:text="${university.address.addressLine2}"></td>
+        <td th:text="${university.address.city}"></td>
+        <td th:text="${university.address.zipCode}"></td>
+    </tr>    
+</table>
+<br/>  
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

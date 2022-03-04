@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>DAM</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<h2>Projects List</h2> 
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Field</th>
+        <th>Budget</th>
+       
+    </tr>
+    <tr th:each="project : ${projects}">
+    	<td th:text="${project.id}"></td>
+        <td th:text="${project.name}"></td>
+        <td th:text="${project.field}"></td>
+        <td th:text="${project.budget}"></td>
+       
+
+    </tr>    
+</table>
+<br/>  
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

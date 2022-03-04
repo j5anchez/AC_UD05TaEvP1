@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DAM</title>
+  </head>
+  <body>
+    <div th:replace="fragments/header :: header"></div>
+    <h2>Instructor List</h2>
+
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>email</th>
+        <th>addressLine1</th>
+        <th>addressLine2</th>
+        <th>city</th>
+        <th>zipCode</th>
+      </tr>
+      <tr th:each="instructor : ${instructors}">
+        <td th:text="${instructor.id}"></td>
+        <td th:text="${instructor.firstName}"></td>
+        <td th:text="${instructor.lastName}"></td>
+        <td th:text="${instructor.email}"></td>
+        <td th:text="${instructor.address.addressLine1}"></td>
+        <td th:text="${instructor.address.addressLine2}"></td>
+        <td th:text="${instructor.address.city}"></td>
+        <td th:text="${instructor.address.zipCode}"></td>
+      </tr>
+    </table>
+    <br />
+    <div th:replace="fragments/footer :: footer"></div>
+  </body>
+</html>

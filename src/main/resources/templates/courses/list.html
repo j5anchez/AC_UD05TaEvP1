@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>DAM</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<h2>Courses List</h2> 
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Credits</th>
+       
+    </tr>
+    <tr th:each="course : ${courses}">
+    	<td th:text="${course.id}"></td>
+        <td th:text="${course.name}"></td>
+        <td th:text="${course.credits}"></td>
+       
+
+    </tr>    
+</table>
+<br/>  
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>
