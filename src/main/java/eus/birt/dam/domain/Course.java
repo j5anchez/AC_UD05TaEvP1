@@ -35,6 +35,6 @@ public class Course extends BaseEntity {
   public Course(String name, int credits) {
     super();
     this.name = name;
-	this.credits = credits;
+    this.credits = credits;
   }
 }
